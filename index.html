@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fourier Series Sim</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+    <div id="canvas"></div>
+    <div class="center">
+      <span id="slider">Slider for \(N \): </span>
+      <div id="fourierseries">
+        <p>
+          The Fourier series for a square wave is: \[f(x) = {4 \over \pi }
+          {\sum_{n=1,3,5,...}^\infty {1 \over n}} \sin \left(\frac{n \pi
+          x}{L}\right)\]
+        </p>
+        <p>
+          For the purpose of simulation, and we really can't go to infinity in
+          the upper equation, we will go to \(N \) initially being \(N = 1 \)
+          and changable through the slider above.
+        </p>
+        <p>
+          The function will become: \[f(x) = {4 \over \pi }
+          {\sum_{n=1,3,5,...}^N {1 \over n}} \sin \left(\frac{n \pi
+          x}{L}\right)\]
+        </p>
+        <p>
+          \(L \) is half of the square wave period \(T \) so the period of the
+          wave is \(T = 2 L \).
+        </p>
+        <div class="imgcenter">
+          <img
+            src="https://mathworld.wolfram.com/images/eps-svg/FourierSeriesSquareWave_800.svg"
+            width="400px"
+            alt=""
+          />
+        </div>
+        <div class="ref">
+          Reference for the math:
+          <a
+            href="https://mathworld.wolfram.com/FourierSeriesSquareWave.html"
+            target="_blank"
+            >Wolfram MathWorld</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .center {
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      /* align-items: center; */
+    }
+    .imgcenter {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+    .ref {
+      font-style: italic;
+      font-size: 0.8em;
+    }
+  </style>
+</html>
